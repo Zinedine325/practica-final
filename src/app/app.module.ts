@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TablaProveedoresComponent } from './tabla-proveedores/tabla-proveedores.component';
+import { FormularioproveedoresComponent } from './formularioproveedores/formularioproveedores.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TablaProveedoresComponent } from './tabla-proveedores/tabla-proveedores
     TablaComponent,
     SidebarComponent,
     NavbarComponent,
-    TablaProveedoresComponent
+    TablaProveedoresComponent,
+    FormularioproveedoresComponent
   ],
   imports: [
     BrowserModule,
