@@ -1,0 +1,27 @@
+
+<h1>Administración de Proveedores</h1>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+        <th>Id</th>
+        <th>Codigo proveedor</th>
+        <th>Razon social</th>
+        <th>RFC</th>
+        <th>Direccion</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let proveedor of proveedores">
+        <td>{{ proveedor.id }}</td>
+        <td>{{ proveedor.codigoProveedor | titlecase }}</td>
+        <td>{{ proveedor.razonSocial }}</td>
+        <td>{{ proveedor.rfc }}</td>
+        <td>{{ proveedor.direccion | titlecase }}</td>
+        <td>{{ proveedor.email }}</td>
+        <td><button type="button" class="btn btn-danger" (click)="borrar(proveedor)">Borrar</button></td>
+        <td><button type="button" class="btn btn-secondary" (click)="seleccionar(proveedor)">Seleccionar</button></td>
+      </tr>
+    </tbody>
+  </table>
