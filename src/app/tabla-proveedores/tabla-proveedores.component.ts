@@ -13,12 +13,12 @@ export class TablaProveedoresComponent {
   //@Output() articuloSeleccionadoEmitter = new EventEmitter();
 
   proveedorSeleccionado : Proveedor = {
-    id: 0,
-    codigoProveedor: '',
-    razonSocial: '',
-    rfc: '',
-    direccion: '',
-    email: ''
+    Id: 0,
+    CodigoProveedor: '',
+    RazonSocial: '',
+    Rfc: '',
+    Direccion: '',
+    Email: ''
   }
 
    constructor(private proveedorService : ProveedoresService, private router : Router){
@@ -27,11 +27,11 @@ export class TablaProveedoresComponent {
    }
 
   proveedores : Proveedor[] = [
-    { id : 1, codigoProveedor : "1111", razonSocial : "Ejemplo SA de CV", rfc : "HCSFSA213", direccion: "Las Villas, 324", email: "proveedor1@gmail.com"},
-    { id : 2, codigoProveedor : "2222", razonSocial : "Ejemplo SA de CV", rfc : "HCSFSA213", direccion: "Las Villas, 324", email: "proveedor2@gmail.com"},
-    { id : 3, codigoProveedor : "3333", razonSocial : "Ejemplo SA de CV", rfc : "HCSFSA213", direccion: "Las Villas, 324", email: "proveedor3@gmail.com"},
-    { id : 4, codigoProveedor : "4444", razonSocial : "Ejemplo SA de CV", rfc : "HCSFSA213", direccion: "Las Villas, 324", email: "proveedor4@gmail.com"},
-    { id : 5, codigoProveedor : "5555", razonSocial : "Ejemplo SA de CV", rfc : "HCSFSA213", direccion: "Las Villas, 324", email: "proveedor5@gmail.com"}
+    // { id : 1, codigoProveedor : "1111", razonSocial : "Ejemplo SA de CV", rfc : "HCSFSA213", direccion: "Las Villas, 324", email: "proveedor1@gmail.com"},
+    // { id : 2, codigoProveedor : "2222", razonSocial : "Ejemplo SA de CV", rfc : "HCSFSA213", direccion: "Las Villas, 324", email: "proveedor2@gmail.com"},
+    // { id : 3, codigoProveedor : "3333", razonSocial : "Ejemplo SA de CV", rfc : "HCSFSA213", direccion: "Las Villas, 324", email: "proveedor3@gmail.com"},
+    // { id : 4, codigoProveedor : "4444", razonSocial : "Ejemplo SA de CV", rfc : "HCSFSA213", direccion: "Las Villas, 324", email: "proveedor4@gmail.com"},
+    // { id : 5, codigoProveedor : "5555", razonSocial : "Ejemplo SA de CV", rfc : "HCSFSA213", direccion: "Las Villas, 324", email: "proveedor5@gmail.com"}
   ];
 
 
@@ -43,13 +43,13 @@ export class TablaProveedoresComponent {
       //Imprime todos los atributos de la interfaz Articulo
     };
     // this.articuloSeleccionadoEmitter.emit(this.articulosSeleccionado);
-    /*this.router.navigate([`modificararticulo/${articulo.codigo}`]);*/
+    this.router.navigate([`modificarproveedor/${proveedor.Id}`]);
 
   }
 
   // Método borrar
   borrar(proveedor: Proveedor) {
-    const confirmacion = confirm(`¿Esta seguro de querer borrar el articulo ${proveedor.razonSocial}?`)
+    const confirmacion = confirm(`¿Esta seguro de querer borrar el proveedor ${proveedor.Id}?`)
     if (confirmacion) {
      // 'Filter' me permite retornar un nuevo arreglo
      // this.articulos = this.articulos.filter(a => a.codigo != articulo.codigo);

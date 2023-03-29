@@ -14,12 +14,12 @@
     </thead>
     <tbody>
       <tr *ngFor="let proveedor of proveedores">
-        <td>{{ proveedor.id }}</td>
-        <td>{{ proveedor.codigoProveedor | titlecase }}</td>
-        <td>{{ proveedor.razonSocial }}</td>
-        <td>{{ proveedor.rfc }}</td>
-        <td>{{ proveedor.direccion | titlecase }}</td>
-        <td>{{ proveedor.email }}</td>
+        <td>{{ proveedor.Id }}</td>
+        <td>{{ proveedor.CodigoProveedor | titlecase }}</td>
+        <td>{{ proveedor.RazonSocial }}</td>
+        <td>{{ proveedor.Rfc }}</td>
+        <td>{{ proveedor.Direccion | titlecase }}</td>
+        <td>{{ proveedor.Email }}</td>
         <td><button type="button" class="btn btn-danger" (click)="borrar(proveedor)">Borrar</button></td>
         <td><button type="button" class="btn btn-secondary" (click)="seleccionar(proveedor)">Seleccionar</button></td>
       </tr>

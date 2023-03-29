@@ -1,8 +1,8 @@
 export interface Proveedor {
-    id : number;
-    codigoProveedor : string;
-    razonSocial : string;
-    rfc : string;
-    direccion : string;
-    email : string;
+    Id : number;
+    CodigoProveedor : string;
+    RazonSocial : string;
+    Rfc : string;
+    Direccion : string;
+    Email : string;
 }

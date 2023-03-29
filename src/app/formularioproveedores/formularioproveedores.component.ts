@@ -15,12 +15,12 @@ export class FormularioproveedoresComponent {
   status : string = '';
 
   @Input() proveedoresSeleccionado : Proveedor = {
-    id: 0,
-    codigoProveedor: '',
-    razonSocial: '',
-    rfc: '',
-    direccion: '',
-    email: ''
+    Id: 0,
+    CodigoProveedor: '',
+    RazonSocial: '',
+    Rfc: '',
+    Direccion: '',
+    Email: ''
 
   }
 
@@ -36,9 +36,9 @@ export class FormularioproveedoresComponent {
     this.activatedRoute.params.subscribe(params =>{
       console.log(params);
       console.log(params["id"]);
-      const id = params["id"];
-      this.status = id == undefined ? "agregar" : "modificar";
-      this.proveedoresSeleccionado = id==undefined ? this.proveedoresSeleccionado : this.proveedoresService.seleccionar(id);
+      const Id = params["id"];
+      this.status = Id == undefined ? "agregar" : "modificar";
+      this.proveedoresSeleccionado = Id==undefined ? this.proveedoresSeleccionado : this.proveedoresService.seleccionar(Id);
     });
   }
 
@@ -59,7 +59,7 @@ export class FormularioproveedoresComponent {
 
   // Método agregar
   agregar() {
-    if (this.proveedoresSeleccionado.id == 0 || this.proveedoresSeleccionado.codigoProveedor == '' || this.proveedoresSeleccionado.razonSocial == '' || this.proveedoresSeleccionado.rfc == '' || this.proveedoresSeleccionado.direccion == '' || this.proveedoresSeleccionado.email == '')
+    if (this.proveedoresSeleccionado.Id == 0 || this.proveedoresSeleccionado.CodigoProveedor == '' || this.proveedoresSeleccionado.RazonSocial == '' || this.proveedoresSeleccionado.Rfc == '' || this.proveedoresSeleccionado.Direccion == '' || this.proveedoresSeleccionado.Email == '')
     {
       //alert("Llene todos los campos");
       this.bandera = true;
@@ -85,12 +85,12 @@ export class FormularioproveedoresComponent {
       ...this.proveedoresSeleccionado
     });
     this.proveedoresSeleccionado = {
-      id: 0,
-      codigoProveedor: '',
-      razonSocial: '',
-      rfc: '',
-      direccion: '',
-      email: ''
+      Id: 0,
+      CodigoProveedor: '',
+      RazonSocial: '',
+      Rfc: '',
+      Direccion: '',
+      Email: ''
     }
   }
 
@@ -109,11 +109,11 @@ export class FormularioproveedoresComponent {
       if (result.isConfirmed) {
         this.proveedoresService.modificar(this.proveedoresSeleccionado);
         this.router.navigate(['/proveedores']);
-        // Swal.fire(
-        //   'Deleted!',
-        //   'Your file has been deleted.',
-        //   'success'
-        // )
+        Swal.fire(
+          'Modificado!',
+          'Su proveedor ha sido modificado.',
+          'success'
+        )
       }
     })
   }

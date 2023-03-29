@@ -15,9 +15,9 @@ export class FormularioComponent {
   status : string = '';
 
   @Input() articulosSeleccionado : Articulo = {
-    codigo: '',
-    descripcion: '',
-    precio: 0
+    Codigo: '',
+    Descripcion: '',
+    Precio: 0
   }
 
   constructor(private articulosService : ArticulosService, 
@@ -55,7 +55,7 @@ export class FormularioComponent {
 
   // Método agregar
   agregar() {
-    if (this.articulosSeleccionado.codigo == '' || this.articulosSeleccionado.descripcion == '' || this.articulosSeleccionado.precio == 0)
+    if (this.articulosSeleccionado.Codigo == '' || this.articulosSeleccionado.Descripcion == '' || this.articulosSeleccionado.Precio == 0)
     {
       //alert("Llene todos los campos");
       this.bandera = true;
@@ -81,9 +81,9 @@ export class FormularioComponent {
       ...this.articulosSeleccionado
     });
     this.articulosSeleccionado = {
-      codigo: '',
-      descripcion: '',
-      precio: 0
+      Codigo: '',
+      Descripcion: '',
+      Precio: 0
     }
   }
 

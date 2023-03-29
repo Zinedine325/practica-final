@@ -7,11 +7,11 @@ import { Proveedor } from '../interface/Proveedor';
 export class ProveedoresService {
 
   proveedores : Proveedor[] = [
-    { id : 1, codigoProveedor : "1111", razonSocial : "Ejemplo SA de CV", rfc : "HCSFSA213", direccion: "Las Villas, 324", email: "proveedor1@gmail.com"},
-    { id : 2, codigoProveedor : "2222", razonSocial : "Ejemplo SA de CV", rfc : "HCSFSA213", direccion: "Las Villas, 324", email: "proveedor2@gmail.com"},
-    { id : 3, codigoProveedor : "3333", razonSocial : "Ejemplo SA de CV", rfc : "HCSFSA213", direccion: "Las Villas, 324", email: "proveedor3@gmail.com"},
-    { id : 4, codigoProveedor : "4444", razonSocial : "Ejemplo SA de CV", rfc : "HCSFSA213", direccion: "Las Villas, 324", email: "proveedor4@gmail.com"},
-    { id : 5, codigoProveedor : "5555", razonSocial : "Ejemplo SA de CV", rfc : "HCSFSA213", direccion: "Las Villas, 324", email: "proveedor5@gmail.com"}
+    { Id : 1, CodigoProveedor : "1111", RazonSocial : "Ejemplo SA de CV", Rfc : "HCSFSA213", Direccion: "Las Villas, 324", Email: "proveedor1@gmail.com"},
+    { Id : 2, CodigoProveedor : "2222", RazonSocial : "Ejemplo SA de CV", Rfc : "HCSFSA213", Direccion: "Las Villas, 324", Email: "proveedor2@gmail.com"},
+    { Id : 3, CodigoProveedor : "3333", RazonSocial : "Ejemplo SA de CV", Rfc : "HCSFSA213", Direccion: "Las Villas, 324", Email: "proveedor3@gmail.com"},
+    { Id : 4, CodigoProveedor : "4444", RazonSocial : "Ejemplo SA de CV", Rfc : "HCSFSA213", Direccion: "Las Villas, 324", Email: "proveedor4@gmail.com"},
+    { Id : 5, CodigoProveedor : "5555", RazonSocial : "Ejemplo SA de CV", Rfc : "HCSFSA213", Direccion: "Las Villas, 324", Email: "proveedor5@gmail.com"}
   ];
 
   constructor() { }
@@ -21,7 +21,7 @@ export class ProveedoresService {
   }
 
   validacion(proveedor : Proveedor) : boolean{
-    const busqueda = this.proveedores.filter(p => p.id == proveedor.id)
+    const busqueda = this.proveedores.filter(p => p.Id == proveedor.Id)
     
     if (busqueda.length != 0) {
       return true;
@@ -34,13 +34,13 @@ export class ProveedoresService {
   }
 
   seleccionar (id : number) : Proveedor{
-    return this.proveedores.find(prov => prov.id == id)!;
+    return this.proveedores.find(prov => prov.Id == id)!;
   }
 
   getIndex(proveedor : Proveedor){
     let index = 0;
     this.proveedores.forEach(prov => {
-      if(proveedor.id == prov.id){
+      if(proveedor.Id == prov.Id){
         index = this.proveedores.indexOf(prov)
       }
     });

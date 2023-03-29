@@ -12,6 +12,7 @@ const routes : Routes = [
   { path: 'modificararticulo/:id', component: FormularioComponent },
   { path: 'proveedores', component: TablaProveedoresComponent },
   { path: 'agregarproveedor', component: FormularioproveedoresComponent },
+  { path: 'modificarproveedor/:id', component: FormularioproveedoresComponent },
   { path: '**', redirectTo: '' }
 ];
 

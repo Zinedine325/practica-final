@@ -7,11 +7,11 @@ import { Articulo } from '../interface/Articulo';
 export class ArticulosService {
 
   articulos : Articulo[] = [
-    { codigo : "1", descripcion : "papa", precio : 10.55},
-    { codigo : "2", descripcion : "manzana", precio : 12.81 },
-    { codigo : "3", descripcion : "melon", precio : 52.23 },
-    { codigo : "4", descripcion : "cebolla", precio : 17 },
-    { codigo : "5", descripcion : "calabaza", precio : 23 }
+    { Codigo : "1", Descripcion : "papa", Precio : 10.55},
+    { Codigo : "2", Descripcion : "manzana", Precio : 12.81 },
+    { Codigo : "3", Descripcion : "melon", Precio : 52.23 },
+    { Codigo : "4", Descripcion : "cebolla", Precio : 17 },
+    { Codigo : "5", Descripcion : "calabaza", Precio : 23 }
   ];
 
   constructor() { }
@@ -21,7 +21,7 @@ export class ArticulosService {
   }
 
   validacion(articulo : Articulo) : boolean{
-    const busqueda = this.articulos.filter(a => a.codigo == articulo.codigo)
+    const busqueda = this.articulos.filter(a => a.Codigo == articulo.Codigo)
     
     if (busqueda.length != 0) {
       return true;
@@ -34,13 +34,13 @@ export class ArticulosService {
   }
 
   seleccionar (cod : string) : Articulo{
-    return this.articulos.find(art => art.codigo == cod)!;
+    return this.articulos.find(art => art.Codigo == cod)!;
   }
 
   getIndex(articulo : Articulo){
     let index = 0;
     this.articulos.forEach(art => {
-      if(articulo.codigo == art.codigo){
+      if(articulo.Codigo == art.Codigo){
         index = this.articulos.indexOf(art)
       }
     });
